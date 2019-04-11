@@ -1,0 +1,149 @@
+Manually Tested from SWagger documntation: 
+
+Generate Key and Token :
+         Key: b67f24ac8f8e7b381d4f0239f6b0da81
+         Token: 812df675872b6a04d91931d5707d3fdbbb642252f8d35d2e696f1753d0bc7bd0
+
+Created a Board : Board Id:  5ca7077df7315881c00313cc
+
+Now need to create a Card by using Board Id 
+
+
+curl --request POST \
+  --url 'https://api.trello.com/1/boards?name=Board_Demo_12&defaultLabels=false&defaultLists=false&keepFromSource=none&prefs_permissionLevel=private&prefs_voting=disabled&prefs_comments=members&prefs_invitations=members&prefs_selfJoin=true&prefs_cardCovers=true&prefs_background=blue&prefs_cardAging=regular&key=08f83ccfaaa52b4e740b2b786163a203&token=6b2b4687f8960f3e1e51e644a58981afce8080f27d67d828dd5370caac4d4daa'
+  
+  
+  {
+"id":"5caae71adc89d2717f201387"
+"name":"Board_Demo_12"
+"desc":""
+"descData":NULL
+"closed":false
+"idOrganization":NULL
+"pinned":false
+"url":"https://trello.com/b/1soRhQnW/boarddemo12"
+"shortUrl":"https://trello.com/b/1soRhQnW"
+"prefs":{...}
+"labelNames":{...}
+"limits":{}
+}
+
+
+GET: Baords Id
+
+
+curl --request GET \
+  --url 'https://api.trello.com/1/boards/5caae71adc89d2717f201387?actions=all&boardStars=none&cards=none&card_pluginData=false&checklists=none&customFields=false&fields=name%2Cdesc%2CdescData%2Cclosed%2CidOrganization%2Cpinned%2Curl%2CshortUrl%2Cprefs%2ClabelNames&lists=open&members=none&memberships=none&membersInvited=none&membersInvited_fields=all&pluginData=false&organization=false&organization_pluginData=false&myPrefs=false&tags=false&key=08f83ccfaaa52b4e740b2b786163a203&token=6b2b4687f8960f3e1e51e644a58981afce8080f27d67d828dd5370caac4d4daa'
+  
+  
+  {
+"id":"5caae71adc89d2717f201387"
+"name":"Board_Demo_12"
+"desc":""
+"descData":NULL
+"closed":false
+"idOrganization":NULL
+"pinned":false
+"url":"https://trello.com/b/1soRhQnW/boarddemo12"
+"shortUrl":"https://trello.com/b/1soRhQnW"
+"prefs":{...}
+"labelNames":{...}
+"actions":[...]
+"lists":[]
+}
+
+
+PUT Boards:
+
+5caae71adc89d2717f201387
+
+curl --request PUT \
+  --url 'https://api.trello.com/1/boards/5caae71adc89d2717f201387?name=User1&desc=Users%20name&closed=false&prefs%2FcardCovers=true&prefs%2FcalendarFeedEnabled=true&key=08f83ccfaaa52b4e740b2b786163a203&token=6b2b4687f8960f3e1e51e644a58981afce8080f27d67d828dd5370caac4d4daa'
+  
+  
+  {
+"id":"5caae71adc89d2717f201387"
+"name":"User1"
+"desc":"Users name"
+"descData":{...}
+"closed":false
+"idOrganization":NULL
+"pinned":false
+"url":"https://trello.com/b/1soRhQnW/user1"
+"shortUrl":"https://trello.com/b/1soRhQnW"
+"prefs":{...}
+"labelNames":{...}
+}
+
+
+GET Card Id
+
+'https://api.trello.com/1/cards/58e800aa9ebaaa01c586f630?attachments=false&attachment_fields=all&members=false&membersVoted=false&checkItemStates=false&checklists=none&checklist_fields=all&board=false&list=false&pluginData=false&stickers=false&sticker_fields=all&customFieldItems=false&key=08f83ccfaaa52b4e740b2b786163a203&token=6b2b4687f8960f3e1e51e644a58981afce8080f27d67d828dd5370caac4d4daa'
+
+
+{
+"id":"58e800aa9ebaaa01c586f630"
+"badges":{...}
+"checkItemStates":[]
+"closed":false
+"dueComplete":false
+"dateLastActivity":"2018-02-22T03:31:10.187Z"
+"desc":"Allows you to stay on top of the progress of any project by sending updates to Slack channels when a ..."
+"descData":{...}
+"due":NULL
+"dueReminder":NULL
+"email":NULL
+"idBoard":"4d5ea62fd76aa1136000000c"
+"idChecklists":[]
+"idList":"58e7fee3e06e4001f1cc3658"
+"idMembers":[]
+"idMembersVoted":[]
+"idShort":1579
+"idAttachmentCover":"58e801c30f51ca01a6dd6745"
+"labels":[]
+"idLabels":[]
+"manualCoverAttachment":false
+"name":"Trello Alerts for Slack"
+"pos":131071
+"shortLink":"SDmaAwz9"
+"shortUrl":"https://trello.com/c/SDmaAwz9"
+"subscribed":false
+"url":"https://trello.com/c/SDmaAwz9/1579-trello-alerts-for-slack"
+}
+
+
+
+curl --request GET \
+  --url 'https://api.trello.com/1/cards/58e800aa9ebaaa01c586f630?attachments=false&attachment_fields=all&members=false&membersVoted=false&checkItemStates=false&checklists=none&checklist_fields=all&board=false&list=false&pluginData=false&stickers=false&sticker_fields=all&customFieldItems=false&key=08f83ccfaaa52b4e740b2b786163a203&token=6b2b4687f8960f3e1e51e644a58981afce8080f27d67d828dd5370caac4d4daa'
+  
+  
+  
+  {
+"id":"58e800aa9ebaaa01c586f630"
+"badges":{...}
+"checkItemStates":[]
+"closed":false
+"dueComplete":false
+"dateLastActivity":"2018-02-22T03:31:10.187Z"
+"desc":"Allows you to stay on top of the progress of any project by sending updates to Slack channels when a ..."
+"descData":{...}
+"due":NULL
+"dueReminder":NULL
+"email":NULL
+"idBoard":"4d5ea62fd76aa1136000000c"
+"idChecklists":[]
+"idList":"58e7fee3e06e4001f1cc3658"
+"idMembers":[]
+"idMembersVoted":[]
+"idShort":1579
+"idAttachmentCover":"58e801c30f51ca01a6dd6745"
+"labels":[]
+"idLabels":[]
+"manualCoverAttachment":false
+"name":"Trello Alerts for Slack"
+"pos":131071
+"shortLink":"SDmaAwz9"
+"shortUrl":"https://trello.com/c/SDmaAwz9"
+"subscribed":false
+"url":"https://trello.com/c/SDmaAwz9/1579-trello-alerts-for-slack"
+}
